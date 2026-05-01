@@ -137,6 +137,67 @@
             animation: rotateCarousel 20s infinite linear;
         }
 
+      header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1; /* Espacio entre líneas ajustado */
+    text-align: center;
+    display: block; /* Cambiado de inline-block para manejar el salto de línea */
+    margin: 0 auto;
+    
+    /* Degradado de Azul Metálico */
+    background: linear-gradient(
+        to bottom, 
+        #0077be 0%, 
+        #00a8e8 25%, 
+        #0084ff 50%, 
+        #00a8e8 75%, 
+        #003366 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text; /* Compatibilidad estándar */
+    -webkit-text-fill-color: transparent;
+    
+    /* Efecto de sombra blanca y resplandor (Glow) */
+    /* Nota: El text-shadow puede ocultar el degradado en algunos navegadores si es muy fuerte, 
+       por eso usamos capas sutiles */
+    text-shadow: 
+        0 1px 0 #ffffff,      
+        0 2px 0 #cbd5e1,      
+        0 0 15px rgba(255, 255, 255, 0.6), 
+        0 0 30px rgba(255, 255, 255, 0.2);
+
+    /* Animación de flotar */
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Estilo específico para la segunda línea */
+header h1 span {
+    font-size: 2.2rem; /* Un poco más pequeño que la primera línea */
+    display: block;    /* Fuerza el salto de línea */
+    margin-top: 10px;  /* Separación entre frases */
+    font-weight: 700;
+    letter-spacing: 4px;
+    /* Re-aplicamos el degradado para que se vea independiente en la segunda línea */
+    background: linear-gradient(
+        to bottom, 
+        #0077be 0%, 
+        #ffffff 50%, 
+        #003366 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Animación de flotar */
+@keyframes floating {
+    0% { transform: translateY(0px) rotateX(0deg); }
+    50% { transform: translateY(-12px) rotateX(4deg); }
+    100% { transform: translateY(0px) rotateX(0deg); }
+}
         
 
         .carousel:hover {
@@ -214,10 +275,10 @@
 </head>
 <body>
 
-    <header>
-        <h1>Breaking the Language Barrier: My English Blog</h1>
-        <p>Software Engineering Student & Blog Project</p>
-    </header>
+    <header style="padding: 60px 0;">
+    <h1>Breaking the Language Barrier <br> <span>My English Blog</span></h1>
+    <p style="margin-top: 20px;">Software Engineering Student & A2+ Project</p>
+</header>
 
     <div class="section-container">
         <section class="blog-section">
